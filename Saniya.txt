@@ -1,0 +1,171 @@
+DELL@DESKTOP-L9T1THN MINGW64 /d/Saniya/3vc25cs025 (main)
+$ vi one.c
+
+DELL@DESKTOP-L9T1THN MINGW64 /d/Saniya/3vc25cs025 (main)
+$ ls
+3vc25cs025/  README.md  hello.txt  hi.txt  lab1.txt  one  one.c
+
+DELL@DESKTOP-L9T1THN MINGW64 /d/Saniya/3vc25cs025 (main)
+$
+
+DELL@DESKTOP-L9T1THN MINGW64 /d/Saniya/3vc25cs025 (main)
+$ git add one.c
+warning: in the working copy of 'one.c', LF will be replaced by CRLF the next time Git touches it
+
+DELL@DESKTOP-L9T1THN MINGW64 /d/Saniya/3vc25cs025 (main)
+$ git commit -m "create one.c"
+[main fadc243] create one.c
+ 1 file changed, 1 insertion(+)
+ create mode 100644 one.c
+
+DELL@DESKTOP-L9T1THN MINGW64 /d/Saniya/3vc25cs025 (main)
+$ git branch b1
+
+DELL@DESKTOP-L9T1THN MINGW64 /d/Saniya/3vc25cs025 (main)
+$ git branch b2
+
+DELL@DESKTOP-L9T1THN MINGW64 /d/Saniya/3vc25cs025 (main)
+$ git branch
+  b1
+  b2
+* main
+
+DELL@DESKTOP-L9T1THN MINGW64 /d/Saniya/3vc25cs025 (main)
+$ git checkout b1
+Switched to branch 'b1'
+
+DELL@DESKTOP-L9T1THN MINGW64 /d/Saniya/3vc25cs025 (b1)
+$ echo "in branch b1 hello world" >> lab3.c
+
+DELL@DESKTOP-L9T1THN MINGW64 /d/Saniya/3vc25cs025 (b1)
+$ git add lab3.c
+warning: in the working copy of 'lab3.c', LF will be replaced by CRLF the next time Git touches it
+
+DELL@DESKTOP-L9T1THN MINGW64 /d/Saniya/3vc25cs025 (b1)
+$ git commit -m "lab3 for b1"
+[b1 4b48251] lab3 for b1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 lab3.c
+
+DELL@DESKTOP-L9T1THN MINGW64 /d/Saniya/3vc25cs025 (b1)
+$ git checkout b2
+Switched to branch 'b2'
+
+DELL@DESKTOP-L9T1THN MINGW64 /d/Saniya/3vc25cs025 (b2)
+$ git merge b1
+Updating fadc243..4b48251
+Fast-forward
+ lab3.c | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 lab3.c
+
+DELL@DESKTOP-L9T1THN MINGW64 /d/Saniya/3vc25cs025 (b2)
+$ git branch -d b1
+Deleted branch b1 (was 4b48251).
+
+DELL@DESKTOP-L9T1THN MINGW64 /d/Saniya/3vc25cs025 (b2)
+$ git push origin main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 270 bytes | 270.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/HKSaniya/3vc25cs025.git
+   64abf60..fadc243  main -> main
+
+DELL@DESKTOP-L9T1THN MINGW64 /d/Saniya/3vc25cs025 (b2)
+
+
+
+
+
+
+3
+DELL@DESKTOP-L9T1THN MINGW64 /d/Saniya/3vc25cs025 (b2)
+$ vi index1.txt
+
+DELL@DESKTOP-L9T1THN MINGW64 /d/Saniya/3vc25cs025 (b2)
+$ git add index1.txt
+warning: in the working copy of 'index1.txt', LF will be replaced by CRLF the next time Git touches it
+
+DELL@DESKTOP-L9T1THN MINGW64 /d/Saniya/3vc25cs025 (b2)
+$ git commit -m "create index1 file"
+[b2 e788830] create index1 file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 index1.txt
+
+DELL@DESKTOP-L9T1THN MINGW64 /d/Saniya/3vc25cs025 (b2)
+$ git branch feature
+
+DELL@DESKTOP-L9T1THN MINGW64 /d/Saniya/3vc25cs025 (b2)
+$ git checkout feature
+Switched to branch 'feature'
+
+DELL@DESKTOP-L9T1THN MINGW64 /d/Saniya/3vc25cs025 (feature)
+$ vi index1.txt
+
+DELL@DESKTOP-L9T1THN MINGW64 /d/Saniya/3vc25cs025 (feature)
+$ git status
+On branch feature
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index1.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .index.txt.swp
+        one
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+DELL@DESKTOP-L9T1THN MINGW64 /d/Saniya/3vc25cs025 (feature)
+$ git stash
+warning: in the working copy of 'index1.txt', LF will be replaced by CRLF the next time Git touches it
+Saved working directory and index state WIP on feature: e788830 create index1 file
+
+DELL@DESKTOP-L9T1THN MINGW64 /d/Saniya/3vc25cs025 (feature)
+$ git checkout feature
+Already on 'feature'
+
+DELL@DESKTOP-L9T1THN MINGW64 /d/Saniya/3vc25cs025 (feature)
+$ git stash pop
+On branch feature
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index1.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .index.txt.swp
+        one
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (d709ee077da032d46ab45c7c7a2f066873191cdd)
+
+DELL@DESKTOP-L9T1THN MINGW64 /d/Saniya/3vc25cs025 (feature)
+$ git add index1.txt
+
+DELL@DESKTOP-L9T1THN MINGW64 /d/Saniya/3vc25cs025 (feature)
+$ git commit -m "create index1 file changed in feature"
+[feature ca777da] create index1 file changed in feature
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+DELL@DESKTOP-L9T1THN MINGW64 /d/Saniya/3vc25cs025 (feature)
+$ git push origin main
+Everything up-to-date
+
+DELL@DESKTOP-L9T1THN MINGW64 /d/Saniya/3vc25cs025 (feature)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+DELL@DESKTOP-L9T1THN MINGW64 /d/Saniya/3vc25cs025 (main)
+$ git push origin main
+Everything up-to-date
+
+DELL@DESKTOP-L9T1THN MINGW64 /d/Saniya/3vc25cs025 (main)
+$
